@@ -1,0 +1,30 @@
+version: '2'
+services:
+  archappl:
+    image: jsparger/epics-archiver-appliance
+    privileged: true
+    hostname: dockerarchappl.ornl.gov
+    ports:
+     - "17665:17665"
+     - "17668:17668"
+    volumes:
+     - $ARCHAPPL_SHORT_TERM_FOLDER:/srv/sts
+     - $ARCHAPPL_MEDIUM_TERM_FOLDER:/srv/mts
+     - $ARCHAPPL_LONG_TERM_FOLDER:/srv/lts
+     - $ARCHAPPL_SCRIPTS_FOLDER:/opt/archappl/scripts
+     - $ARCHAPPL_DEFAULT_FOLDER:/opt/archappl/default
+     - $ARCHAPPL_ETC_FOLDER:/etc/archappl
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash /opt/archappl/scripts/start.sh
+    environment:
+      ARCHAPPL_EPICS_CA_ADDR_LIST: $ARCHAPPL_EPICS_CA_ADDR_LIST
+    links: 
+     - db
+  db:
+    image: mysql
+    volumes:
+      - $ARCHAPPL_DB_FOLDER:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "archappl"
+

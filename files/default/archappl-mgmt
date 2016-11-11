@@ -1,0 +1,19 @@
+ARCHAPPL_SHORT_TERM_FOLDER=/srv/sts/ArchiverStore
+ARCHAPPL_MEDIUM_TERM_FOLDER=/srv/mts/ArchiverStore
+ARCHAPPL_LONG_TERM_FOLDER=/srv/lts/ArchiverStore
+
+ARCHAPPL_MYIDENTITY=appliance0
+ARCHAPPL_APPLIANCES=/etc/archappl/appliances.xml
+ARCHAPPL_POLICIES=/etc/archappl/policies.py
+ARCHAPPL_PROPERTIES_FILENAME=/etc/archappl/archappl.properties
+
+JAVA_OPTS="-XX:MaxPermSize=128M -Xmx128M -Xms128M -ea"
+
+# Directory where the Tomcat 7 binary distribution resides
+CATALINA_HOME=/usr/share/tomcat7
+
+# Directory for per-instance configuration files and webapps
+CATALINA_BASE=/var/lib/tomcat7-archappl/mgmt
+
+EPICS_CA_AUTO_ADDR_LIST=yes
+EPICS_CA_ADDR_LIST="127.0.0.1 webopi.sns.gov:5066 160.91.228.17"

@@ -1,0 +1,11 @@
+<appliances>
+  <appliance>
+    <identity>appliance0</identity>
+    <cluster_inetport>dockerarchappl.ornl.gov:17670</cluster_inetport>
+    <mgmt_url>http://dockerarchappl.ornl.gov:17665/mgmt/bpl</mgmt_url>
+    <engine_url>http://dockerarchappl.ornl.gov:17666/engine/bpl</engine_url>
+    <etl_url>http://dockerarchappl.ornl.gov:17667/etl/bpl</etl_url>
+    <retrieval_url>http://dockerarchappl.ornl.gov:17668/retrieval/bpl</retrieval_url>
+      <data_retrieval_url>http://dockerarchappl.ornl.gov:17668/retrieval</data_retrieval_url>
+  </appliance>
+</appliances>
